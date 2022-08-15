@@ -22,6 +22,7 @@ class SliverScrollController {
   final goingDown = ValueNotifier<bool>(false);
 
   // Valor para hacer la validaciones de los iconos superiores
+  //Value to make the validations of the superior icons
   final valueScroll = ValueNotifier<double>(0);
 
   // Para mover los items superiores en sliver - To move the top category bar
