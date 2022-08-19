@@ -21,10 +21,9 @@ class _GetBoxOffsetState extends State<GetBoxOffset> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPersistentFrameCallback((timeStamp) {
-      final RenderBox renderBox =
-          widgetKey.currentContext?.findRenderObject() as RenderBox;
-      offset = renderBox.localToGlobal(Offset.zero);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final box = widgetKey.currentContext?.findRenderObject() as RenderBox;
+      offset = box.localToGlobal(Offset.zero);
       widget.offset(offset);
     });
     super.initState();
